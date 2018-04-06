@@ -1,0 +1,71 @@
+Now note that $G(n, U) = \pdv{S(n,U)}{U}$.
+
+\paragraph{Two distinguishable particles in 1D}
+
+While positions are independent, there is dependence between $p_1$ and $p_2$:
+$$\frac{p_1^2}{2m}+\frac{p_2^2}{2m} + E$$
+We can note that
+$$S_{2D}(1,U) = S_{1D} (2, U)$$
+
+\paragraph{$N$ particles in $D$ dimensions}
+$$S_D(N,U) = \frac{1}{h^{DN}} \int\limits_{\va{x}_1 \in V} \dd[D]{x_1} \: \dots  \int\limits_{\va{x}_n \in V} \dd[D]{x_n}  \idotsint\limits_{\sum_{i=1}^n \va{p}_i^2 \leq 2mU} \dd[D]{p_1} \dots \dd[D]{p_n}$$
+
+\subparagraph{Ball volume in dimension $d$}
+Define gamma function. For $\alpha > 0$
+$$\frac{1}{\alpha} = \int_0^\infty \dd{x} e^{-x\alpha}$$
+Differentiating $n$ times by $\alpha$ (and dividing by $(-1)^n$:
+$$\frac{N!}{\alpha^{N+1}} = \int_0^\infty \dd{x} x^N e^{-x\alpha}$$
+By substituting $\alpha = 1$:
+$$N! = \int_0^\infty \dd{x} x^N e^{-x}$$
+Thus define 
+$$\Gamma(N+1) = \int_0^\infty \dd{x} x^n e^{-x}$$
+
+Define area of $d$-dimensional sphere of radius $R$ as
+$$A_d = S_d \cdot R^{d-1}$$
+Define also
+$$I_d = \left(\int_{-\infty}^{\infty} \dd{x} e^{-x^2}\right)^d$$
+On one hand $I_D = \pi^{\frac{d}{2}}$, on the other hand
+$$I_d = \int_{-\infty}^{\infty} \dd{x_1}  e^{-x^2} \int_{-\infty}^{\infty} \dd{x_2}  e^{-x^2} \dots \int_{-\infty}^{\infty} \dd{x_n}  e^{-x^2} = \int_{-\infty}^{\infty} \dd{x_1}\dd{x_2}\dots \dd{x_n}   e^{-\sum_{i=1}^n x_i^2}$$
+For $R=\sum_{i=1}^n x_i^2$:
+$$I_D = \int_0^\infty \dd{R} S_d R^{d-1} e^{-R^2}$$
+(Note that when we perform integral over angular dimensions we acquire exactly $S_d$ from Jacobean).
+
+For $y=R^2$, $\dd{y}=2R\dd{R}$:
+$$\int_0^\infty \frac{dy}{2\sqrt{y}} S_d y^{\frac{d-1}{2}} e^{-y} = \frac{S_d}{2} \int_{0}^{\infty} y^{\frac{d}{2} -1} e^{-y} dy = \frac{S_d}{2} \Gamma\left(\frac{d}{2}\right)$$
+Thus
+$$\frac{S_d}{2} \Gamma\left(\frac{d}{2}\right) = \pi^{\frac{d}{2}} $$
+i.e.\
+$$S_d = \frac{2\pi^{\frac{d}{2}}}{\Gamma\left(\frac{d}{2}\right)}$$
+
+Now the volume of $d$-dimensional ball
+$$V_d = \int_0^R \dd{r} \frac{2\pi^{\frac{d}{2}}}{\Gamma\left(\frac{d}{2}\right)} r^{d-1}= \frac{\pi^{\frac{d}{2}}}{\Gamma\left(\frac{d}{2}\right)} \frac{r^{d}}{\frac{d}{2}}= \frac{\pi^{\frac{d}{2}}r^{d}}{\Gamma\left(\frac{d}{2}+1\right)}$$
+
+Back to our particles:
+
+$$S_D(N,U) = \frac{1}{h^{DN}} \int\limits_{\va{x}_1 \in V} \dd[D]{x_1} \: \dots  \int\limits_{\va{x}_n \in V} \dd[D]{x_n}  \idotsint\limits_{\sum_{i=1}^n \va{p}_i^2 \leq 2mU} \dd[D]{p_1} \dots \dd[D]{p_n} = \frac{L^{DN} \pi^{\frac{DN}{2}} (2mU)^{\frac{DN}{2}}}{h^{DN} \Gamma\left(\frac{DN}{2}+1\right)} = \left(\frac{L}{h}\right)^{DN}\frac{  (2\pi mw)^{\frac{DN}{2}}}{\Gamma\left(\frac{DN}{2}+1\right)}$$
+
+Thus in our world 
+$$S_3(N,U) = \frac{V^{N} \pi^{\frac{3N}{2}} (2mU)^{\frac{3N}{2}}}{h^{3N} \Gamma\left(\frac{3N}{2}+1\right)}$$
+And
+$$G_3(N,U) = \pdv{S_3(N,U)}{U} = \frac{V^{N} \pi^{\frac{3N}{2}} (2mU)^{\frac{3N}{2}-1} \cdot \frac{3}{2}N \cdot 2m}{h^{3N} \Gamma\left(\frac{3N}{2}+1\right)} = \frac{3V^{N} \pi^{\frac{3N}{2}} (2mU)^{\frac{3N}{2}-1}mN}{h^{3N} \Gamma\left(\frac{3N}{2}+1\right)}$$
+
+\paragraph{Integral approximation with steepest descent}
+Suppose we want calculate 
+$$I = \int \dd{x} e^{N \phi(x)}$$
+for some big $N$ and $x_{max}$ is maximum of $\phi$:
+$$I \approxeq \int \dd{x} \exp\left[N \left(\phi(x_{max}) - \frac{1}{2} \left| \phi''(x_{max}) \right| (x-x_{max})^2 + \frac{1}{3!} \phi'''(x_{max} ) (x-x_{max})^3 \right)\right]$$
+Then, substituting $y=\sqrt{N}(x-x_{max})$
+$$I = e^{N\phi(x_{max})} \int \frac{\dd{y}}{\sqrt{N}} e^{-\frac{1}{2} |\phi''(x_{max})| y^2 + \frac{1}{3!}\phi''' \left(x_{max}\right)\frac{y^3}{\sqrt{N}}}$$
+Since $N$ is big, $\frac{1}{3!}\phi''' \left(x_{max}\right)\frac{y^3}{\sqrt{N}}$ is negligible (and higher orders too):
+$$I =  e^{N\phi(x_{max})} \sqrt{\frac{2\pi}{N |\phi''(x_{max})|}}$$
+
+\subparagraph{Example}
+Lets approximate $n!$:
+$$\Gamma(n+1) = \int_0^\infty \dd{x} x^N e^{-x} = \int_0^\infty \dd{x} e^{N \left( \ln x - \frac{x}{N}\right)}$$
+Thus $\phi(x) = \ln x - \frac{x}{N}$, and
+$$\phi'(x)  = \frac{1}{x} - \frac{1}{N}$$
+i.e., $x_{max} = N$. And
+$$\left|\phi''(x) \right| = \frac{1}{x^2} $$
+$$\Gamma(n+1) = \int_0^\infty \dd{x} x^N e^{-x} = \int_0^\infty \dd{x} e^{N \left( \ln x - \frac{x}{N}\right)} \approxeq e^{N\left( \ln N - 1\right)} \sqrt{\frac{2\pi}{N \frac{1}{N^2}}} = N^N e^{-N} \sqrt{2 \pi N}$$
+which is Stirling approximation. We usually want to take logarithm:
+$$\ln (N!) \approxeq N\ln N - N + \frac{1}{2} \ln (2\pi N)$$
