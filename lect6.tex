@@ -4,7 +4,7 @@ $$\underbrace{Pxy}_{F} \cdot (-\Delta z )= -P \Delta V  =\Delta W = \Delta E$$
 We want energy difference to depend on two independent things - volume change and heat:
 $$E = -P\Delta V + \tau \Delta \sigma$$
 Thus we define
-$$ P = - \eval{\pdv{E}{V}}_{N, \sigma}$$ 
+$$ P = - \qty(\pdv{E}{V})_{N, \sigma}$$ 
 We can rewrite
 $$\dd{U} = \tau\dd{\sigma} - P\dd{V}$$
 \paragraph{Ideal gas in 3D}
@@ -13,7 +13,7 @@ $$\sigma = \ln g = \ln \frac{3N}{2} + N\ln V + \qty(\frac{3N}{2}-1)\ln (2mU) - \
 Differentiating in implicit way
 $$\dd{\sigma} = N \frac{1}{V} \ln \dd{V} +  \qty(\frac{3N}{2}-1)\frac{\dd{U}}{U} \approx N\frac{\dd{V}}{V} + \frac{3N}{2}\frac{\dd{U}}{U}$$
 Since $\sigma$ is unchanged,
-$$P = \pdv{U}{V} = -\frac{2}{3}\frac{U}{V}$$
+$$P = -\qty(\pdv{U}{V})_{\sigma} = -\frac{2}{3}\frac{U}{V}$$
 
 
 Alternatively,
@@ -33,18 +33,20 @@ There are two kinds of variables:
 	
 	Entropy representation:
 	$$\begin{cases}
-	\pdv{\sigma}{U} = \frac{1}{\tau}\\
-	\pdv{\sigma}{V} = \frac{P}{V}
+	\qty(\pdv{\sigma}{U})_{V,N} = \frac{1}{\tau}\\
+	\qty(\pdv{\sigma}{V})_{U,N} = \frac{P}{\tau}
 	\end{cases}$$
 	\item $T$, $P$ are intensive variables. If we divide system, they don't change.
+	
+	Energy representation
 	$$\begin{cases}
-	\pdv{U}{\sigma} = \tau\\
-	\pdv{U}{V} = V
+	\qty(\pdv{U}{\sigma})_{V, N} = \tau\\
+	-\qty(\pdv{U}{V})_{\sigma, N} = P
 	\end{cases}$$
 \end{itemize}
 
-Define chemical potential $\mu=\pdv{U}{N}$ such that
+Define chemical potential $\mu=\qty(\pdv{U}{N})_{\sigma, V}$ such that
 $$\dd{U} = \tau \dd{\sigma} - P \dd{V} + \mu\dd{N}$$
 
-
+Also
 $$\sigma(\lambda U, \lambda V, \lambda N) = \lambda \sigma ( U,  V,  N) $$

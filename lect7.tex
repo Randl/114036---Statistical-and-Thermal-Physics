@@ -1,0 +1,58 @@
+$$U(\lambda \sigma, \lambda V, \lambda N) = \lambda U (\sigma,  V,  N) $$
+$$\qty(\pdv{U}{\lambda \sigma})_{V, N} \sigma + \qty(\pdv{U}{\lambda V})_{\sigma, N} V + \qty(\pdv{U}{\lambda N})_{\sigma, V} N  =U$$
+Substituting $\lambda=1$ we get Euler equation:
+$$U = \tau \sigma - PV + \mu N $$
+Differentiating
+$$\dd{U} = \sigma \dd{\tau} + \tau \dd{\sigma} -P\dd{V} -V\dd{P} + \mu \dd{N} + N\dd{\mu}$$
+Remember the energy conservation
+$$\dd{U} = \tau \dd{\sigma} - P \dd{V} + \mu\dd{N}$$
+We get
+$$0 = \sigma \dd{\tau} - V\dd{P} + N \dd{\mu}$$
+This is called Gibbs–Duhem equation.
+
+Note that we can't just add constant to energy? since it will not fulfill $U'(\lambda\sigma, \lambda V, \lambda N) = \lambda U'(\sigma, V, N)$. However, we can add a constant energy per particle.
+
+\paragraph{Example}
+Suppose we have microcanonical ensemble. The energy conserved $\dd{U} = 0$, and in optimal state entropy is maximal, thus $\dd{\sigma}=0$. Suppose we have some parameter $\pdv[2]{\sigma}{x} < 0$, for example moving wall of box.
+
+Note that we can use entropy representation: start from maximal entropy $\dd{\sigma}=0$ and search for minimal energy $\dd{U}=0R$.
+
+In entropy representation we get
+$$\begin{cases}
+\qty(\pdv{\sigma}{x})_U = 0\\
+\qty(\pdv[2]{\sigma}{x})_U < 0\\
+\end{cases}$$
+In energy representation:
+$$\qty(\pdv{U}{x})_\sigma = \frac{\qty(\pdv{\sigma}{x})_U}{\qty(\pdv{\sigma}{U})_x} = -\tau (\pdv{\sigma}{x})_U$$
+Exists point $x_0$ such that $(\pdv{\sigma}{x})_U=0$. Since $\qty(\pdv{U}{x})_\sigma$ is increasing function, thus $\pdv[2]{U}{x}>0$, i.e. the point is minimum.
+
+\paragraph{Canonical ensemble}
+In canonical ensemble, we get
+$$\begin{cases}
+\dd{(U+U^r)} = 0\\
+\dd{(\sigma+\sigma^r)} = 0\\
+\end{cases}$$
+If the system divided in two, we know that the reservoir can pass only heat to the system, thus:
+$$\tau^r \dd{\sigma^r}+\tau^1 \dd{\sigma^1}+\tau^2 \dd{\sigma^1}=0$$
+Since the whole microcanonical system (system+reservoir) is isolated:
+$$\dd{\sigma^r}+\dd{\sigma^1}+ \dd{\sigma^1}=0$$
+Subtracting:
+$$(\tau^1-\tau^r) \dd{\sigma^1}+(\tau^2-\tau^r) \dd{\sigma^2}=0$$
+This equality is always right, thus $\tau^1=\tau^2=\tau^r$.
+Substituting $\dd{U^r}$:
+$$\dd{U} + \tau^{r} \dd{\sigma^r} = 0$$
+Substituting $\dd{\sigma^r} = -\dd{\sigma}$ and $\tau=\tau^r$:
+$$\dd{U} - \tau \dd{\sigma} = 0$$ 
+$$\dd{(U -\tau\sigma)}  = 0$$ 
+Define new quantity, free energy:
+$$F = U - \tau \sigma = U - TS$$
+
+Note, that if we compress gas, its temperature increases, and this energy goes to the atmosphere (reservoir), and thus part of energy is lost. $F$ is extensive quantity.
+
+Since $U^r$ depends only on $\tau$ and $\sigma$ we can rewrite
+
+$$F = U(\tau, V, N) - \tau \sigma(\tau, V, N) $$
+such that $F$ doesn't depend on properties of reservoir except temperature.
+\paragraph{Constant pressure}
+we can replace reservoir with ballon of gas such that the pressure will be kept constant. In this case we minimize a quantity called enthalpy:
+$$H = U+PV$$
