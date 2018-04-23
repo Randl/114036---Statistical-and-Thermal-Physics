@@ -1,0 +1,50 @@
+\subsection{Pressure}
+Suppose we have microcanonincal ensemble of volume $V$ and dimensions $x$,$y$,$z$. If we move one of box walls by $\Delta z$, then we have
+$$\underbrace{Pxy}_{F} \cdot (-\Delta z )= -P \Delta V  =\Delta W = \Delta E$$
+We want energy difference to depend on two independent things - volume change and heat:
+$$E = -P\Delta V + \tau \Delta \sigma$$
+Thus we define
+$$ P = - \eval{\pdv{E}{V}}_{N, \sigma}$$ 
+We can rewrite
+$$\dd{U} = \tau\dd{\sigma} - P\dd{V}$$
+\paragraph{Ideal gas in 3D}
+$$g(U,V,N) = \frac{3N}{2} V^N (2mU)^{\frac{3N}{2}-1} \frac{\pi^{\frac{3N}{2}}}{h^{3N} \Gamma\qty(\frac{3N}{2}+1)} $$
+$$\sigma = \ln g = \ln \frac{3N}{2} + N\ln V + \qty(\frac{3N}{2}-1)\ln (2mU) - \ln \Gamma\qty(\frac{3N}{2}+1) - \ln \frac{\pi^{\frac{3N}{2}}}{h^{3N}}$$
+Differentiating in implicit way
+$$\dd{\sigma} = N \frac{1}{V} \ln \dd{V} +  \qty(\frac{3N}{2}-1)\frac{\dd{U}}{U} \approx N\frac{\dd{V}}{V} + \frac{3N}{2}\frac{\dd{U}}{U}$$
+Since $\sigma$ is unchanged,
+$$P = \pdv{U}{V} = -\frac{2}{3}\frac{U}{V}$$
+
+
+Alternatively,
+$$0 =\dd{\sigma} = \pdv{\sigma}{U}\dd{U} + \pdv{\sigma}{V} \dd{V}$$
+$$\pdv{\sigma}{U} \pdv{U}{V} + \pdv{\sigma}{V} = 0$$
+$$\frac{1}{\tau} (-P) + \pdv{\sigma}{V} = 0$$
+$$\frac{P}{\tau} - \frac{N}{V} = 0$$
+$$PV = k_B TN$$
+
+\paragraph{}
+Define $h = \frac{N}{N_A}$, for $N_A$ - Avogadro number, and also $R  = k_B N_A$, acquiring
+$$PV = RhT$$
+\section{Thermodynamical identities}
+There are two kinds of variables: 
+\begin{itemize}
+	\item $\sigma$, $U$, $V$, $N$ - extensive variables. If we divide system, they change proportionally.
+	
+	Entropy representation:
+	$$\begin{cases}
+	\pdv{\sigma}{U} = \frac{1}{\tau}\\
+	\pdv{\sigma}{V} = \frac{P}{V}
+	\end{cases}$$
+	\item $T$, $P$ are intensive variables. If we divide system, they don't change.
+	$$\begin{cases}
+	\pdv{U}{\sigma} = \tau\\
+	\pdv{U}{V} = V
+	\end{cases}$$
+\end{itemize}
+
+Define chemical potential $\mu=\pdv{U}{N}$ such that
+$$\dd{U} = \tau \dd{\sigma} - P \dd{V} + \mu\dd{N}$$
+
+
+$$\sigma(\lambda U, \lambda V, \lambda N) = \lambda \sigma ( U,  V,  N) $$

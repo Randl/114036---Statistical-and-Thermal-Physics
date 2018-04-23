@@ -23,14 +23,18 @@ $$\dd{Q} = \tau \dd{\sigma}$$
 	\item When $\tau \to 0$, $\sigma\to0$ (there is one state).
 \end{enumerate}
 \subsection{Boltzmann distribution}
-Suppose we divide a closed system into two parts: system and reservoir - 
+Suppose we divide a closed system into two parts: system and reservoir: 
 \begin{center}
 	\includegraphics[width=0.5\linewidth]{./lect5/pic1.png}
 \end{center}
 What is probability that system $S$ will be in state which has energy $\epsilon$?
-$$P_S(\epsilon)  \propto g_R(N,U_0 \cdot \epsilon)$$
+$$P_S(\epsilon)  \propto g_R(N,U_0 + \epsilon)$$
+Where $U_0$ is total energy of reservoir + system. 
+More precisely
+$$P_S(\epsilon) = \frac{g_R(N,U_0 + \epsilon)}{g(U_0)}$$
 For two states, ratio of probabilities is
-$$\frac{P_S(\epsilon_1)}{P_S(\epsilon_2)} = \frac{g_R(N,U_0 \cdot \epsilon_1)}{g_R(N,U_0 \cdot \epsilon_2)} = e^{\sigma_R(U_0-\epsilon_1)-\sigma_R(U_0-\epsilon_2)}$$ 
+$$\frac{P_S(\epsilon_1)}{P_S(\epsilon_2)} = \frac{g_R(N,U_0 - \epsilon_1)}{g_R(N,U_0 - \epsilon_2)} = e^{\sigma_R(U_0-\epsilon_1)-\sigma_R(U_0-\epsilon_2)}$$ 
+We assume that reservoir is much larger than system, i.e., $U_0 \gg \epsilon_0$:
 $$\sigma_R(U_0 -\epsilon) = \sigma_R(U_0) - \pdv{\sigma_R}{U}\epsilon + \order{\epsilon^2} \approx  \sigma_R(U_0) - \frac{1}{\tau} \epsilon$$
 Thus
 
