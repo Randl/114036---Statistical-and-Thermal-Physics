@@ -1,0 +1,66 @@
+\subsection{Average energy in canonical case}
+$$\expval{\epsilon} = \frac{\sum_{states} \epsilon_{st} e^{-\frac{\epsilon_{st}}{\tau}}}{Z(\tau)} = \tau^2 \pdv{\ln Z}{\tau}$$
+Why is it true?
+$$\pdv{\ln Z}{\tau} = \frac{1}{Z} \pdv{Z}{\tau} $$
+Define $\beta = \frac{1}{\tau}$, then
+$$\pdv{\tau} = -\frac{1}{\tau^2} \pdv{\beta}$$
+$$\pdv{Z}{\tau} = -\frac{1}{\tau^2} \pdv{\beta} \sum e^{-\beta \epsilon_{st}} = \frac{1}{\tau^2} \sum_{states} \epsilon_{st} e^{-\beta \epsilon_{st}} $$
+Thus
+$$\pdv{\ln Z}{\tau} = \frac{1}{Z\tau^2} \sum_{states} \epsilon_{st} e^{-\frac{\epsilon_{st}}{\tau} }  $$
+i.e.,
+$$\expval{\epsilon} = \tau^2 \pdv{\ln Z}{\tau}$$
+\paragraph{Magnetic moments with reservoir}
+Suppose we have magnetic field $B$, denote
+$$\mu B = \frac{1}{2} \epsilon$$
+If we have exactly two moments,
+$$Z_1 = e^{-\frac{\epsilon}{2\tau}}+e^{\frac{\epsilon}{2\tau}} = 2\cosh(\frac{\epsilon}{2\tau})$$
+and
+$$Z_2 = \qty( e^{-\frac{\epsilon}{2\tau}}+e^{\frac{\epsilon}{2\tau}} )\qty( e^{-\frac{\epsilon}{2\tau}}+e^{\frac{\epsilon}{2\tau}} ) $$
+And in general,
+$$Z_N = Z_1^N$$
+
+For one particle:
+$$\expval{\epsilon_1} = \frac{-\frac{1}{2} \epsilon e^{\frac{\epsilon}{2\tau}}+\frac{1}{2} \epsilon e^{-\frac{\epsilon}{2\tau}}}{ e^{-\frac{\epsilon}{2\tau}}+e^{\frac{\epsilon}{2\tau}}} = -\frac{\epsilon}{2} \frac{\sinh(\frac{\epsilon}{2\tau})}{\cosh(\frac{\epsilon}{2\tau})} = -\frac{\epsilon}{2}\tanh(\frac{\epsilon}{2\tau})$$
+
+Now for $N$ particles
+$$\expval{\epsilon} = \tau^2 \pdv{\ln Z}{\tau} \tau^2 \pdv{\tau} \ln Z_1^N = N \cdot \tau^2 (\frac{\epsilon}{2\tau}) = N \expval{\epsilon_1}$$
+\paragraph{Thermodynamic perspective}
+Define $2S = N^{\uparrow} - N^{\downarrow}$.
+$$g(N,S) = \frac{N!}{N^{\uparrow}! N^{\downarrow}!}$$
+$$\sigma(N,S) = \ln g(N,S) = \frac{1}{2} \ln(2\pi N)^{-1} - \qty(\frac{1}{2}N+S) \ln(\frac{1}{2}+\frac{S}{N}) -\qty(\frac{1}{2}N-S ) \ln(\frac{1}{2} + \frac{S}{N})$$
+Thus
+$$F = U -\tau \sigma = -2\mu BS - \frac{\tau}{2} \ln(2\pi N)^{-1}+ \qty(\frac{1}{2}N+S)\tau \ln(\frac{1}{2}+\frac{S}{N}) +\qty(\frac{1}{2}N-S )\tau \ln(\frac{1}{2} + \frac{S}{N}) $$ 
+$$\pdv{F}{S} = -2\mu B +\tau \ln(\frac{N+2S}{N-2S}) = 0$$
+$$\frac{N+2S}{N-2S} = e^{\frac{2\mu B}{\tau}}$$
+$$N+2S = (N-2S)e^{\frac{2\mu B}{\tau}}$$
+$$2S\qty(1+e^{\frac{2\mu B}{\tau}}) = N\qty(e^{\frac{2\mu B}{\tau}}-1)$$
+$$2S = N\frac{e^{\frac{2\mu B}{\tau}}-1}{1+e^{\frac{2\mu B}{\tau}}}$$
+$$2S = N\frac{e^{\frac{\mu B}{\tau}}-e^{-\frac{\mu B}{\tau}}}{e^{-\frac{\mu B}{\tau}}+e^{\frac{\mu B}{\tau}}} = N\frac{\sinh(-\frac{\mu B}{\tau})}{\cosh(-\frac{\mu B}{\tau})} =N \tanh(-\frac{\mu B}{\tau})$$
+Since $\epsilon = -2\mu B S$
+$$\epsilon = -\mu B N  \tanh(-\frac{\mu B}{\tau})$$
+\paragraph{Connection between $F$ and $Z$}
+$$F = U -\tau \sigma$$
+$$\dd{F} = \dd{U} -\sigma \dd{\tau} - \tau \dd{\sigma}$$
+$$\dd{U} = \tau \dd{\sigma} - P\dd{V}$$
+i.e.,
+$$\dd{F} = -P\dd{V} - \sigma\dd{\tau}$$
+Thus, if $\tau$ is constant
+$$\dd{F} =- P\dd{V}$$
+$$P = -\qty(\pdv{F}{V})_{\tau}$$
+If, on contrary, volume is constant
+$$\sigma = -\qty(\pdv{F}{\tau})_{V}$$
+If we differentiate first equation, with constant $\tau$, we get
+$$\qty(\pdv{F}{V})_{\tau} +\qty(\pdv{U}{V})_{\tau} = \tau\qty(\pdv{\sigma}{V})_{\tau} \Rightarrow -P = \qty(\pdv{U}{V})_{\tau} -\tau\qty(\pdv{\sigma}{V})_{\tau}$$
+i.e.,
+$$P = -\qty(\pdv{U}{V})_{\tau} +\tau\qty(\pdv{\sigma}{V})_{\tau}$$
+
+In addition, substituting $\sigma$:
+
+$$F = U  + \tau\qty(\pdv{F}{\tau})_{V} $$
+$$U = F - \tau\qty(\pdv{F}{\tau})_{V}$$
+$$U =- \tau^2 \qty[ \pdv{\tau} \frac{F}{\tau}]$$
+At the same time
+$$U = -\tau^2 \pdv{\ln Z}{\tau}$$
+$$- \tau^2 \qty[ \pdv{\tau} \frac{F}{\tau}]  = -\tau^2 \pdv{\ln Z}{\tau}$$
+$$ \frac{F}{\tau}  = \ln Z + \alpha$$
+for some constant $\alpha$.
