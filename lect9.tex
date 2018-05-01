@@ -1,0 +1,38 @@
+\paragraph{Quantum particle in box}
+Suppose we have particle in box, it has energy
+$$E=\frac{\hbar^2}{2m} \qty(\frac{\pi}{2})^2 n^2$$
+Note here we have minimal energy which is non-zero, and for this energy we have only one possible state, which confirms third law of thermodynamics (in opposite, in classical mechanics there are many states with minimal energy).
+
+In limit $Z\to 0$ we get
+$$Z = g_0e^{\frac{\epsilon_0}{Z}} +\sum_{\text{high energies}} e^{-\frac{\epsilon}{Z}} \approx  g_0e^{\frac{\epsilon_0}{Z}}$$
+From third law $g_0=1$.
+$$\ln Z = -\frac{\epsilon_0}{Z}$$
+$$F = -\tau \ln Z + \alpha \tau = \epsilon_0 +\alpha \tau$$
+Since 
+$$\sigma = -\qty(\pdv{F}{\tau})_V$$
+$$\sigma=-\alpha$$
+i.e., $\alpha = 0$, meaning
+$$F= -\tau \ln Z$$
+\subsection{Classical ideal gas in statistic approach}
+In thermodynamics we acquired 
+$$PV=Nk_BT$$
+$$U=\frac{3}{2} Nk_BT$$
+$$g(U,V) =V^N U^{\frac{3}{2}N-1}$$
+\paragraph{Partittion function of ideal gas}
+\begin{align*}
+	Z_N = \frac{1}{h^{3N}} \int \dd{p_x^1} \int \dd{p_y^1} \int \dd{p_z^1} \dots  \int \dd{p_x^N} \int \dd{p_y^N} \int \dd{p_z^N} \int \dd{x_1} \int \dd{y_1} \int \dd{z_1} \dots  \int \dd{x_N} \int \dd{y_N} \int \dd{z_N} e^{-\frac{1}{z} \sum_{i=1}^N \frac{\va{p}_i^2}{2m\tau}} =\\=
+	\frac{V^n}{h^{3N}} \int \dd{p_x^1} \int \dd{p_y^1} \int \dd{p_z^1} \dots  \int \dd{p_x^N} \int \dd{p_y^N} \int \dd{p_z^N} e^{-\frac{1}{z} \sum_{i=1}^N \frac{\va{p}_i^2}{2m\tau}} =\\=
+	\frac{V^n}{h^{3N}} \int \dd{p_x^1} \int \dd{p_x^1} e^{-\frac{1}{z} \frac{{p_x^1}^2}{2m\tau}} \int \dd{p_y^1} e^{-\frac{1}{z} \frac{{p_y^1}^2}{2m\tau}} \int \dd{p_z^1} e^{-\frac{1}{z} \frac{{p_z^1}^2}{2m\tau}} \dots  \int \dd{p_x^N} e^{-\frac{1}{z} \frac{{p_x^N}^2}{2m\tau}} \int \dd{p_y^N} e^{-\frac{1}{z} \frac{{p_y^N}^2}{2m\tau}} \int \dd{p_z^N} e^{-\frac{1}{z} \frac{{p_z^N}^2}{2m\tau}}
+\end{align*}
+
+Then for each particle
+$$Z_1 = \frac{V}{h^{3}} \int \dd{p_x^1}  \int \dd{p_x^1} e^{-\frac{1}{z} \frac{{p_x^1}^2}{2m\tau}} \int \dd{p_y^1} e^{-\frac{1}{z} \frac{{p_y^1}^2}{2m\tau}} \int \dd{p_z^1} e^{-\frac{1}{z} \frac{{p_z^1}^2}{2m\tau}} = \frac{V}{h^{3}} \qty[\int_{-\infty}^\infty \dd{p} e^{- \frac{p^2}{2mz\tau}}]^3 \stackrel{\text{Gaussian}}{=}  \frac{V\qty(2\pi m \tau )^{\frac{3}{2}}}{h^{3}}$$
+$$Z_N = Z_1^N$$
+$$\expval{\epsilon} = \tau^2 \pdv{\ln Z_n}{\tau} = \tau^2 N \pdv{\ln Z_1}{\tau} = \tau^2 N \cdot \frac{3}{2\tau} = \frac{3}{2} N\tau = \frac{3}{2} Nk_BT$$
+\paragraph{Pressure of ideal gas}
+$$P = -\qty(\pdv{F}{V})_\tau $$
+And
+$$F = -\tau \ln Z_N = -\tau \ln Z_1^N = -\tau N \ln Z_1 = -\tau N \qty(\ln(V) + \ln (\tau^{\frac{3}{2}}) + \text{const})$$
+$$\pdv{F}{V} = -\frac{\tau N}{V}$$
+$$P = \frac{\tau N}{V}$$
+$$PV = \tau N = k_B NT$$
