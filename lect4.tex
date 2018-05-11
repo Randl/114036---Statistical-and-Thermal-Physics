@@ -51,11 +51,13 @@ $$g(N_1,N_2,S_1,S_2) = g_1(0)g_2(0) e^{-\frac{2S^2}{N}}$$
 
 Suppose we are looking at different state
 $$\begin{cases}
-S_1 = S_1^{max} + \delta
+S_1 = S_1^{max} + \delta\\
 S_2 = S_2^{max} - \delta
 \end{cases}$$
 Then
-$$g(N_1,N_2,S_1,S_2) = g_{max}(N_1,N_2,S_1,S_2) \cdot \exp\qty(-\frac{4S_1^{max} \delta}{N_1}-\frac{2\delta^2}{N_1}+\frac{4S_2^{max} \delta}{N_2}-\frac{2\delta^2}{N_2}) = g_{max}(N_1,N_2,S_1,S_2) \cdot \exp\qty(-\frac{2\delta^2}{N_1}-\frac{2\delta^2}{N_2})$$
+\begin{align*}
+g(N_1,N_2,S_1,S_2) = g_{max}(N_1,N_2,S_1,S_2) \cdot \exp\qty(-\frac{4S_1^{max} \delta}{N_1}-\frac{2\delta^2}{N_1}+\frac{4S_2^{max} \delta}{N_2}-\frac{2\delta^2}{N_2}) = g_{max}(N_1,N_2,S_1,S_2) \cdot \exp\qty(-\frac{2\delta^2}{N_1}-\frac{2\delta^2}{N_2})
+\end{align*}
 For example, if $N_1=N_2=10^{22}$  and $\delta = 10^{12}$, i.e., $\frac{\delta}{N_1} = 10^{-10}$, 
 
 $$g(N_1,N_2,S_1,S_2) = g_{max}(N_1,N_2,S_1,S_2) \cdot e^{-400}$$

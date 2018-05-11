@@ -18,7 +18,7 @@ In thermodynamics we acquired
 $$PV=Nk_BT$$
 $$U=\frac{3}{2} Nk_BT$$
 $$g(U,V) =V^N U^{\frac{3}{2}N-1}$$
-\paragraph{Partittion function of ideal gas}
+\paragraph{Partition function of ideal gas}
 \begin{align*}
 	Z_N = \frac{1}{h^{3N}} \int \dd{p_x^1} \int \dd{p_y^1} \int \dd{p_z^1} \dots  \int \dd{p_x^N} \int \dd{p_y^N} \int \dd{p_z^N} \int \dd{x_1} \int \dd{y_1} \int \dd{z_1} \dots  \int \dd{x_N} \int \dd{y_N} \int \dd{z_N} e^{-\frac{1}{z} \sum_{i=1}^N \frac{\va{p}_i^2}{2m\tau}} =\\=
 	\frac{V^n}{h^{3N}} \int \dd{p_x^1} \int \dd{p_y^1} \int \dd{p_z^1} \dots  \int \dd{p_x^N} \int \dd{p_y^N} \int \dd{p_z^N} e^{-\frac{1}{z} \sum_{i=1}^N \frac{\va{p}_i^2}{2m\tau}} =\\=
@@ -26,13 +26,19 @@ $$g(U,V) =V^N U^{\frac{3}{2}N-1}$$
 \end{align*}
 
 Then for each particle
-$$Z_1 = \frac{V}{h^{3}} \int \dd{p_x^1}  \int \dd{p_x^1} e^{-\frac{1}{z} \frac{{p_x^1}^2}{2m\tau}} \int \dd{p_y^1} e^{-\frac{1}{z} \frac{{p_y^1}^2}{2m\tau}} \int \dd{p_z^1} e^{-\frac{1}{z} \frac{{p_z^1}^2}{2m\tau}} = \frac{V}{h^{3}} \qty[\int_{-\infty}^\infty \dd{p} e^{- \frac{p^2}{2mz\tau}}]^3 \stackrel{\text{Gaussian}}{=}  \frac{V\qty(2\pi m \tau )^{\frac{3}{2}}}{h^{3}}$$
+\begin{align*}
+Z_1 = \frac{V}{h^{3}} \int \dd{p_x^1}  \int \dd{p_x^1} e^{-\frac{1}{z} \frac{{p_x^1}^2}{2m\tau}} \int \dd{p_y^1} e^{-\frac{1}{z} \frac{{p_y^1}^2}{2m\tau}} \int \dd{p_z^1} e^{-\frac{1}{z} \frac{{p_z^1}^2}{2m\tau}} = \frac{V}{h^{3}} \qty[\int_{-\infty}^\infty \dd{p} e^{- \frac{p^2}{2mz\tau}}]^3 \stackrel{\text{Gaussian}}{=}  \frac{V\qty(2\pi m \tau )^{\frac{3}{2}}}{h^{3}}
+\end{align*}
 $$Z_N = Z_1^N$$
-$$\expval{\epsilon} = \tau^2 \pdv{\ln Z_n}{\tau} = \tau^2 N \pdv{\ln Z_1}{\tau} = \tau^2 N \cdot \frac{3}{2\tau} = \frac{3}{2} N\tau = \frac{3}{2} Nk_BT$$
+\begin{align*}
+\expval{\epsilon} = \tau^2 \pdv{\ln Z_n}{\tau} = \tau^2 N \pdv{\ln Z_1}{\tau} = \tau^2 N \cdot \frac{3}{2\tau} = \frac{3}{2} N\tau = \frac{3}{2} Nk_BT
+\end{align*}
 \paragraph{Pressure of ideal gas}
 $$P = -\qty(\pdv{F}{V})_\tau $$
 And
-$$F = -\tau \ln Z_N = -\tau \ln Z_1^N = -\tau N \ln Z_1 = -\tau N \qty(\ln(V) + \ln (\tau^{\frac{3}{2}}) + \text{const})$$
+\begin{align*}
+F = -\tau \ln Z_N = -\tau \ln Z_1^N = -\tau N \ln Z_1 = -\tau N \qty(\ln(V) + \ln (\tau^{\frac{3}{2}}) + \text{const})
+\end{align*}
 $$\pdv{F}{V} = -\frac{\tau N}{V}$$
 $$P = \frac{\tau N}{V}$$
 $$PV = \tau N = k_B NT$$

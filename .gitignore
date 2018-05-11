@@ -233,3 +233,7 @@ TSWLatexianTemp*
 # standalone packages
 *.sta
 
+# svg
+svg-inkscape
+
+

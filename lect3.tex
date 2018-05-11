@@ -5,20 +5,27 @@ where $2S = N_\uparrow - N_\downarrow$ and $N= N_\uparrow + N_\downarrow$
 $$\ln g = \ln N! - \ln N_\uparrow ! - \ln N_\downarrow!$$
 $$\ln N! = \frac{1}{2} \ln 2\pi + (N+1) \ln N - \frac{1}{2} \ln N - N$$
 Substituting
-$$\ln N! = \frac{1}{2}ln \frac{2\pi}{N} + \qty(N_\uparrow + \frac{1}{2} + N_\downarrow + \frac{1}{2}) \ln N - (N_\uparrow + N_\downarrow)$$
+\begin{align*}
+\ln N! = \frac{1}{2}ln \frac{2\pi}{N} + \qty(N_\uparrow + \frac{1}{2} + N_\downarrow + \frac{1}{2}) \ln N - (N_\uparrow + N_\downarrow)
+\end{align*}
 in addition
 $$\ln N_\uparrow! = \frac{1}{2} \ln 2\pi + \qty(N_\uparrow + \frac{1}{2}) \ln N_\uparrow - N_\uparrow$$
 $$\ln N_\downarrow! = \frac{1}{2} \ln 2\pi + \qty(N_\downarrow + \frac{1}{2}) \ln N_\downarrow - N_\downarrow$$
 so
 $$\ln g = \frac{1}{2}ln \frac{1}{2\pi N}  - \qty(N_\uparrow - \frac{1}{2}) \ln \frac{N_\uparrow}{N}   - \qty(N_\downarrow + \frac{1}{2}) \ln \frac{N_\downarrow}{N} $$
 Now since
-$$\ln \frac{N_\uparrow}{N} = \ln(\frac{1}{2} + \frac{2S}{2N}) = \ln\frac{1}{2}\qty(1 + \frac{2S}{N}) = \ln \frac{1}{2} + \ln(1+\frac{2S}{N})$$
+\begin{align*}
+\ln \frac{N_\uparrow}{N} = \ln(\frac{1}{2} + \frac{2S}{2N}) = \ln\frac{1}{2}\qty(1 + \frac{2S}{N}) = \ln \frac{1}{2} + \ln(1+\frac{2S}{N})
+\end{align*}
+
 If $S \ll N$
 $$\ln \frac{N_\uparrow}{N}  = -\ln 2 + \frac{2S}{N} - \frac{2S^2}{N^2}$$
 similarly
 $$\ln \frac{N_\downarrow}{N}  = -\ln 2 - \frac{2S}{N} + \frac{2S^2}{N^2}$$
 Thus
-$$\ln g = \frac{1}{2}\ln \frac{1}{2\pi N}  - \qty(\frac{1}{2}N + S - \frac{1}{2}) \qty(-\ln 2 + \frac{2S}{N} - \frac{2S^2}{N^2})  - \qty(\frac{1}{2}N - S + \frac{1}{2}) \qty(-\ln 2 - \frac{2S}{N} +  \frac{2S^2}{N^2}) $$
+\begin{align*}
+\ln g = \frac{1}{2}\ln \frac{1}{2\pi N}  - \qty(\frac{1}{2}N + S - \frac{1}{2}) \qty(-\ln 2 + \frac{2S}{N} - \frac{2S^2}{N^2})  - \qty(\frac{1}{2}N - S + \frac{1}{2}) \qty(-\ln 2 - \frac{2S}{N} +  \frac{2S^2}{N^2})
+\end{align*}
 i.e.,
 $$\ln g = \frac{1}{2}ln \frac{2}{\pi N}  + N \ln 2 -\frac{2S}{N} + \order{\frac{S^3}{N^2}}$$
 $$g(N,S) = \qty(\frac{2}{\pi N})^{\frac{1}{2}} 2^N e^{-\frac{2S^2}{N}}$$
@@ -30,6 +37,8 @@ $$\rho(S) = \qty(\frac{2}{\pi N})^{\frac{1}{2}} e^{-\frac{2S^2}{N}} $$
 Which is normal distribution with mean $0$ and standard deviation $\frac{\sqrt{N}}{2}$.  (This is immediate from CLT).
 
 Lets check the standard deviation of actual $S$:
-$$\big\langle (2S)^2 \big\rangle = \left\langle \qty(\sum_i N_i)^2
-0 \right\rangle = \left\langle \sum_{i,j} N_iN_j \right\rangle = \left\langle \sum_i N_i^2 + \underbrace{\sum_{i\neq j} N_iN_j}_{0 \: \text{from independence}} \right\rangle  =\left\langle \sum_i N_i^2\right\rangle = N$$
+\begin{align*}
+\big\langle (2S)^2 \big\rangle = \left\langle \qty(\sum_i N_i)^2
+0 \right\rangle = \left\langle \sum_{i,j} N_iN_j \right\rangle = \left\langle \sum_i N_i^2 + \underbrace{\sum_{i\neq j} N_iN_j}_{0 \: \text{from independence}} \right\rangle  =\left\langle \sum_i N_i^2\right\rangle = N
+\end{align*}
 Thus variance of $2S$ is $N$ and variance of $S$ is $\frac{N}{4}$.

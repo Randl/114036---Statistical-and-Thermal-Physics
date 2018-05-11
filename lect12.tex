@@ -1,0 +1,48 @@
+ For isolated system,
+$$U = \tau \sigma - PV + \mu N$$
+$$G = \mu N$$
+
+\paragraph{Second derivatives of $G$}
+$$G(\tau, P, N) = U(\tau, P, N) - \tau \sigma(\tau, P, N) -  PV(\tau, P, N)$$
+In ideal gas, temperature defines energy:
+$$\dd{G} =\dd{U} - \tau \dd{\sigma} - \sigma \dd{\tau} + P\dd{V} +V\dd{P}$$
+From energy conservation
+$$\dd{U} =  - \sigma \dd{\tau} + P\dd{V} +\mu\dd{N}$$
+$$\dd{G} = - \sigma \dd{\tau} + V\dd{P} + \mu \dd{N}$$
+$$\qty(\pdv{G}{\tau})_{P,N} = -\sigma \quad \qty(\pdv{G}{P})_{\tau,N} = V \quad \qty(\pdv{G}{N})_{P,\tau} = \mu$$
+Thus $G$ is potential:
+$$\pdv{G}{\tau}{P} = \pdv{G}{p}{\tau} \Rightarrow \qty(\pdv{\tau} V)_P = -\qty(\pdv{P} \sigma)_\tau$$
+\paragraph{Measurable quantities}
+It's hard to measure energy or entropy, thus we'll measure different quantities:
+
+\begin{itemize}
+	\item Compressibility
+	$$k_T(T,P) = -\frac{1}{V} \qty(\pdv{V}{P})_{T,N}$$
+	Coefficient of thermal expansion:
+	$$\alpha(\tau,P) = \frac{1}{V} \qty(\pdv{V}{T})_{P,N}$$
+	Specific heat:
+	$$c_P = \frac{1}{N} \qty(\frac{\delta Q}{\dd{T}})_{P,N}$$
+\end{itemize}
+
+Here, $\delta Q$ is inexact differential, meaning that $Q$ is path function (depends on path taken to get from one state to another), or alternatively, there doesn't exists a function $q$ such that $\grad{q}=Q$.
+\paragraph{$\alpha, k_T, c_P$ are useful for non-ideal gas}
+In ideal gas there are no interactions, thus everything we solved can't be applied for non-ideal gases.
+\paragraph{$N$ atoms in volume $V$}
+$$V = V(\tau,P)$$
+$$\dd{V} = \qty(\pdv{V}{P})_\tau \dd{P} +\qty(\pdv{V}{\tau})_P \dd{\tau}$$
+$$\dd{V}b= -Vk_{\tau}(\tau,P) \dd{P} + V\alpha(\tau, P) \dd{\tau}$$
+$$\int_{V_0,\tau_0}^V \frac{\dd{V}}{V} = \int_{\tau_0,P_0}^{\tau, P} \begin{pmatrix}-k_{\tau}(\tau,P) \dd{P} & \frac{1}{k_B}\alpha(\tau, P)\end{pmatrix}\begin{pmatrix}
+\dd{P}\\\dd{\tau}
+\end{pmatrix}$$
+$$\ln(\frac{V}{V_0}) = \int_{\tau_0}^\tau \frac{\alpha}{k_B} (\tau', P_0) \dd{\tau'} - \int_{P_0}^P k_T (T,P') \dd{P'}$$
+\paragraph{Quantum gas}
+One dimentional Shr\"{o}dinger equation
+$$-\frac{\hbar^2}{2m} \pdv[2]{\Psi}{x} = E\Psi$$
+$$\Psi = A\sin(kx)$$
+when $kL = n\pi$.
+$$E = \frac{\hbar^2 k^2}{2m} = \frac{\hbar^2}{2m} \qty(\frac{\pi}{L})^2n^2$$
+In 3D we get
+$$-\frac{\hbar^2}{2m} \laplacian{\Psi}{x} = E\Psi$$
+$$\Psi = A\sin(k_xx)\sin(k_yy)\sin(k_zz)$$
+Each of $k_i = \qty(\frac{\pi}{L})n_i$, i.e.
+$$E = \frac{\hbar^2}{2m} \qty(\frac{\pi}{L})^2\qty(n_x^2+n_y^2+n_z^2)$$

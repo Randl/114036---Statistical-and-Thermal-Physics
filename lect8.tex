@@ -20,22 +20,30 @@ And in general,
 $$Z_N = Z_1^N$$
 
 For one particle:
-$$\expval{\epsilon_1} = \frac{-\frac{1}{2} \epsilon e^{\frac{\epsilon}{2\tau}}+\frac{1}{2} \epsilon e^{-\frac{\epsilon}{2\tau}}}{ e^{-\frac{\epsilon}{2\tau}}+e^{\frac{\epsilon}{2\tau}}} = -\frac{\epsilon}{2} \frac{\sinh(\frac{\epsilon}{2\tau})}{\cosh(\frac{\epsilon}{2\tau})} = -\frac{\epsilon}{2}\tanh(\frac{\epsilon}{2\tau})$$
+\begin{align*}
+\expval{\epsilon_1} = \frac{-\frac{1}{2} \epsilon e^{\frac{\epsilon}{2\tau}}+\frac{1}{2} \epsilon e^{-\frac{\epsilon}{2\tau}}}{ e^{-\frac{\epsilon}{2\tau}}+e^{\frac{\epsilon}{2\tau}}} = -\frac{\epsilon}{2} \frac{\sinh(\frac{\epsilon}{2\tau})}{\cosh(\frac{\epsilon}{2\tau})} = -\frac{\epsilon}{2}\tanh(\frac{\epsilon}{2\tau})
+\end{align*}
 
 Now for $N$ particles
 $$\expval{\epsilon} = \tau^2 \pdv{\ln Z}{\tau} \tau^2 \pdv{\tau} \ln Z_1^N = N \cdot \tau^2 (\frac{\epsilon}{2\tau}) = N \expval{\epsilon_1}$$
 \paragraph{Thermodynamic perspective}
 Define $2S = N^{\uparrow} - N^{\downarrow}$.
 $$g(N,S) = \frac{N!}{N^{\uparrow}! N^{\downarrow}!}$$
-$$\sigma(N,S) = \ln g(N,S) = \frac{1}{2} \ln(2\pi N)^{-1} - \qty(\frac{1}{2}N+S) \ln(\frac{1}{2}+\frac{S}{N}) -\qty(\frac{1}{2}N-S ) \ln(\frac{1}{2} + \frac{S}{N})$$
+\begin{align*}
+\sigma(N,S) = \ln g(N,S) = \frac{1}{2} \ln(2\pi N)^{-1} - \qty(\frac{1}{2}N+S) \ln(\frac{1}{2}+\frac{S}{N}) -\qty(\frac{1}{2}N-S ) \ln(\frac{1}{2} + \frac{S}{N})
+\end{align*}
 Thus
-$$F = U -\tau \sigma = -2\mu BS - \frac{\tau}{2} \ln(2\pi N)^{-1}+ \qty(\frac{1}{2}N+S)\tau \ln(\frac{1}{2}+\frac{S}{N}) +\qty(\frac{1}{2}N-S )\tau \ln(\frac{1}{2} + \frac{S}{N}) $$ 
+\begin{align*}
+F = U -\tau \sigma = -2\mu BS - \frac{\tau}{2} \ln(2\pi N)^{-1}+ \qty(\frac{1}{2}N+S)\tau \ln(\frac{1}{2}+\frac{S}{N}) +\qty(\frac{1}{2}N-S )\tau \ln(\frac{1}{2} + \frac{S}{N})
+\end{align*}
 $$\pdv{F}{S} = -2\mu B +\tau \ln(\frac{N+2S}{N-2S}) = 0$$
 $$\frac{N+2S}{N-2S} = e^{\frac{2\mu B}{\tau}}$$
 $$N+2S = (N-2S)e^{\frac{2\mu B}{\tau}}$$
 $$2S\qty(1+e^{\frac{2\mu B}{\tau}}) = N\qty(e^{\frac{2\mu B}{\tau}}-1)$$
 $$2S = N\frac{e^{\frac{2\mu B}{\tau}}-1}{1+e^{\frac{2\mu B}{\tau}}}$$
-$$2S = N\frac{e^{\frac{\mu B}{\tau}}-e^{-\frac{\mu B}{\tau}}}{e^{-\frac{\mu B}{\tau}}+e^{\frac{\mu B}{\tau}}} = N\frac{\sinh(-\frac{\mu B}{\tau})}{\cosh(-\frac{\mu B}{\tau})} =N \tanh(-\frac{\mu B}{\tau})$$
+\begin{align*}
+2S = N\frac{e^{\frac{\mu B}{\tau}}-e^{-\frac{\mu B}{\tau}}}{e^{-\frac{\mu B}{\tau}}+e^{\frac{\mu B}{\tau}}} = N\frac{\sinh(-\frac{\mu B}{\tau})}{\cosh(-\frac{\mu B}{\tau})} =N \tanh(-\frac{\mu B}{\tau})
+\end{align*}
 Since $\epsilon = -2\mu B S$
 $$\epsilon = -\mu B N  \tanh(-\frac{\mu B}{\tau})$$
 \paragraph{Connection between $F$ and $Z$}
@@ -50,7 +58,9 @@ $$P = -\qty(\pdv{F}{V})_{\tau}$$
 If, on contrary, volume is constant
 $$\sigma = -\qty(\pdv{F}{\tau})_{V}$$
 If we differentiate first equation, with constant $\tau$, we get
-$$\qty(\pdv{F}{V})_{\tau} +\qty(\pdv{U}{V})_{\tau} = \tau\qty(\pdv{\sigma}{V})_{\tau} \Rightarrow -P = \qty(\pdv{U}{V})_{\tau} -\tau\qty(\pdv{\sigma}{V})_{\tau}$$
+\begin{align*}
+\qty(\pdv{F}{V})_{\tau} +\qty(\pdv{U}{V})_{\tau} = \tau\qty(\pdv{\sigma}{V})_{\tau} \Rightarrow -P = \qty(\pdv{U}{V})_{\tau} -\tau\qty(\pdv{\sigma}{V})_{\tau}
+\end{align*}
 i.e.,
 $$P = -\qty(\pdv{U}{V})_{\tau} +\tau\qty(\pdv{\sigma}{V})_{\tau}$$
 

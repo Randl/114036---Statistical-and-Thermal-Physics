@@ -1,0 +1,50 @@
+\subsection{Equipartition theorem}
+Let $f$ number of degrees of freedom and $o_i$ - $i^{th}$ degree of freedom, then
+$$E = \sum_{i=1}^f a_io_i^2$$
+
+\paragraph{Example: harmonic oscillator}
+First $\frac{f}{2}$ degrees of freedom are momenta and second half are locations
+$$Z = \frac{1}{h^f}  \idotsint_{-\infty}^\infty \dd{o_1} \dots \dd{o_{\frac{f}{2}}} \dd{o_{\frac{f}{2}+1}}\dots \dd{o_f} e^{-\beta \sum_{i=1}^f a_io_i^2} = \prod_{i=1}^f \frac{1}{h} \int_{-\infty}^\infty e^{-\beta a_io^2} \dd{o}  = \prod_{i=1}^f \frac{1}{h} \sqrt{\frac{\pi \tau}{a_i}}$$
+$$\expval{\epsilon} =c\tau^2 \pdv{\tau} \ln Z = \tau^2 \pdv{\tau} \sum_{i=1}^f \ln(\frac{1}{h} \sqrt{\frac{\pi \tau}{a_i}}) = \tau^2 \pdv{\tau} f\ln \tau^{\frac{1}{2}} = \frac{1}{2} \tau f$$
+
+Note that we count only degrees of freedom which can acquire values from $-\infty$ to $\infty$, thus, for ideal gas $f=3N$ (for oscillators $f=6N$).
+\paragraph{Definition} Interaction is part of energy that depends on distance between particles:
+$$E = \sum \frac{p_i^2}{2m} + V(r_i) + \sum_j U(\va{r}_i-\va{r}_j)$$
+\subsection{Thermodynamic potentials}
+\paragraph{Electric potential}
+Electric potential is $\phi(x,y)$ such that
+$$\dd{\phi} = \pdv{\phi}{x} \dd{x} \pdv{\phi}{y} \dd{y}$$
+Electric field is $E = -\grad{\phi}$ and its conserving field, i.e. $\curl{\va{E}} = 0$.
+\paragraph{In thermodynamics}
+$F$, $\sigma$, $u$ are potential in sense that difference between two states is independent on path.
+
+\paragraph{1D}
+$$\dd{F} = \qty(\pdv{F}{\tau})_V \dd{\tau} + \qty(\pdv{F}{V})_\tau \dd{V}$$
+$$\dd{U} = \underbrace{\qty(\pdv{U}{\sigma})_V}_{\tau} \dd{\sigma} + \underbrace{\qty(\pdv{F}{V})_\sigma}_{-P} \dd{V}$$
+If $U$ is potential then
+$$\qty[\pdv{V} \qty(\pdv{U}{\sigma})_V]_\sigma =\qty[ \pdv{\sigma} \qty(\pdv{U}{V})_\sigma]_V$$
+$$\qty(\pdv{T}{V})_\sigma = -\qty(\pdv{P}{\sigma})_V$$
+
+Additional example:
+$$\qty[\pdv{V} \qty(\pdv{U}{\sigma})_V]_\sigma =\qty[ \pdv{\sigma} \qty(\pdv{U}{V})_\sigma]_V$$
+$$\qty(\pdv{T}{V})_\sigma = -\qty(\pdv{P}{\sigma})_V$$
+
+Also, similarly to electricity, the path integral is potential difference:
+$$\Delta F = \int_{V_0,\tau_0}^{V_1, \tau_1} -\sigma \dd{\tau} - P \dd{V}$$
+\paragraph{Gibbs free energy}
+Experimental system is in constant temperature and pressure. Instead of searching for total entropy, we'll try something else:
+$$U^\dagger = U^r+U^1+U^2$$
+$$\begin{cases}
+\dd{U}^\dagger = \dd{U}^r + \dd{U}^1 + \dd{U}^2\\
+\dd{\sigma}^r+ \dd{\sigma}^1 + \dd{\sigma}^2 = 0\\
+\dd{V}^1+\dd{V}^2+\dd{V}^r = 0\\
+\dd{V}^1+\dd{V}^2 = 0
+\end{cases}$$
+Substituting energy:
+$$\tau^r\dd{\sigma}^r + \tau^1\dd{\sigma}^1 + \tau^2\dd{\sigma}^2 - P^r\dd{V}^r  - P^1\dd{V}^1  - P^2\dd{V}^2 + \mu^1 \dd{N}^1 + \mu^2 \dd{N}^2 = 0$$
+$$(\tau^1-\tau^r)\dd{\sigma}^1 + (\tau^2-\tau^r)\dd{\sigma}^2 + (P^r-P^1) \dd{V}^1 + (P^r-P^2) \dd{V}^2 + (\mu^1-\mu^2)\dd{N}^1 = 0$$
+$$\begin{cases}
+\tau^2=\tau^r=\tau^1\\P^1=P^2=P^r\\\mu^1=\mu^2
+\end{cases}$$
+Thus we'll optimize
+$$G=U-\tau\sigma+PV$$
